@@ -1,11 +1,13 @@
 package collections;
 
+import exception.QueueException;
+
 public interface IQueue <T> {
 	public void enqueue(T newElement);
 	
 	public void dequeue()throws QueueException;
 	
-	public boolean isEmpaty();
+	public boolean isEmpty();
 	
 	public int getSize();
 	

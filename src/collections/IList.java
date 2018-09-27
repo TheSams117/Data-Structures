@@ -1,5 +1,7 @@
 package collections;
 
+import exception.ListException;
+
 public interface IList <T> {
 
       public void add(T newElement);
@@ -18,7 +20,7 @@ public interface IList <T> {
 	  
 	  public int getSize();
 
-      public boolean isEmpaty();
+      public boolean isEmpty();
 
       public void deleteAll();
 

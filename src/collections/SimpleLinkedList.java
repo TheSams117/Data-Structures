@@ -1,5 +1,9 @@
 package collections;
 
+import exception.ListException;
+import exception.QueueException;
+import exception.StackException;
+
 public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 	
     private Node<E> firstNode;
@@ -38,12 +42,12 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
         this.size = size;
     }
 
-    public boolean isEmpaty(){
+    public boolean isEmpty(){
         return (firstNode==null)? true:false;
     }
     
     public IList<E> getArrayList()throws Exception {
-    	if (isEmpaty()) {
+    	if (isEmpty()) {
 			throw new Exception("The structure is empty");
 		}
     	IList<E> array = this;
@@ -59,7 +63,7 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 
         Node<E> newNode = new Node<E>(element);
 
-        if(isEmpaty()){
+        if(isEmpty()){
             firstNode = newNode;
         } else {
             newNode.setNextNode(firstNode);
@@ -72,7 +76,7 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
     @Override
     public void pop() throws StackException{
       
-        if(!isEmpaty()){
+        if(!isEmpty()){
             firstNode = firstNode.getNextNode();
             size-=1;
             
@@ -84,7 +88,7 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 	@Override
 	public E top() throws StackException {
 
-		if(isEmpaty()) {
+		if(isEmpty()) {
 			
 			throw new StackException("The stack is empaty");
 		}
@@ -99,7 +103,7 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 	public void enqueue(E newElement) {
 		Node<E> newNode = new Node<E>(newElement);
 
-		if(isEmpaty()) {
+		if(isEmpty()) {
 			firstNode = newNode;
 			lastNode = firstNode;
 		}else {
@@ -112,7 +116,7 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 
 	@Override
 	public void dequeue() throws QueueException {
-		if(isEmpaty()) {
+		if(isEmpty()) {
 			throw new QueueException("The Queue is empaty");
 		}else {
 			firstNode = firstNode.getNextNode();
@@ -121,12 +125,12 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 	}
 
 	@Override
-	public E front() throws QueueException {
+	public E front() {
 		return (E) firstNode.getElement();
 	}
 
 	@Override
-	public E back() throws QueueException {
+	public E back() {
 		return (E) lastNode.getElement();
 	}
 //  			  |----------------------------------|
@@ -137,7 +141,7 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 	public void add(E newElement) {
 		Node<E> newNode = new Node<E>(newElement);
 		
-		if(isEmpaty()) {
+		if(isEmpty()) {
 			firstNode = newNode;
 			lastNode=firstNode;
 		}else {
@@ -150,7 +154,7 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 
 	@Override
 	public void assign(int pos, E newElement) throws ListException {
-		if(isEmpaty()) {
+		if(isEmpty()) {
 			throw new ListException("The list is empaty");
 		}else if(pos>=size || pos<0) {
 			throw new ListException("The index of income is outside the list");
@@ -182,14 +186,8 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 	}
 
 	@Override
-	public void remove(E element) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public void removeElement(int pos) throws ListException {
-		if(isEmpaty()) {
+		if(isEmpty()) {
 			throw new ListException("The list is empaty");
 		}else if(pos>=size || pos<0) {
 			throw new ListException("The index of income is outside the list");
@@ -234,7 +232,7 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 	@Override
 	public E getElement(int pos) throws ListException {
 		
-		if(isEmpaty()) {
+		if(isEmpty()) {
 			throw new ListException("The list is empaty");
 		}else if(pos>=size || pos<0) {
 			throw new ListException("The index of income is outside the list");
@@ -262,13 +260,7 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 		for (int i = 0; i <= 20; i++) {
 			list.add(i);
 		}
-//		list.removeElement(0);
-//		list.removeElement(10);
-//		list.removeElement(18);
-//		list.assign(0, 40);
-//		list.assign(10, 20);
-		//list.assign(20, 46);
-		//list.deleteAll();
+		list.assign(0, 21312);
 		for (int i = 0; i < list.getSize(); i++) {
 			System.out.println(list.getElement(i)+"");
 
@@ -276,6 +268,12 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 		
 		System.out.println("Tamaño: "+list.getSize()+"");
 		
+		
+	}
+
+	@Override
+	public void remove(E element) {
+		// TODO Auto-generated method stub
 		
 	}
 }

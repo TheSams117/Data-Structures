@@ -1,4 +1,4 @@
-package collections;
+package exception;
 
 @SuppressWarnings("serial")
 public class StackException extends Exception {

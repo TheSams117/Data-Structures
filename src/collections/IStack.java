@@ -1,5 +1,7 @@
 package collections;
 
+import exception.StackException;
+
 public interface IStack <T> {
 
     public void push(T newelement);
@@ -8,7 +10,7 @@ public interface IStack <T> {
     
     public int getSize();
     
-    public boolean isEmpaty();
+    public boolean isEmpty();
     
 	public T top() throws StackException;
 	
