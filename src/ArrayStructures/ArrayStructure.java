@@ -1,15 +1,19 @@
 package ArrayStructures;
 
 import java.lang.reflect.Array;
+import java.util.Hashtable;
 
 import collections.IList;
 import collections.SimpleLinkedList;
 
 public class ArrayStructure <T>{
 	private IList<T>[] array;
+	private Hashtable<Integer,String> a;
 	
 	public ArrayStructure(int size) {
 		array = new SimpleLinkedList[size]; //(T[]) Array.newInstance(clazz,size);	
+		a = new Hashtable<>();
+	
 	}
 
 //	public T[] getArray() {

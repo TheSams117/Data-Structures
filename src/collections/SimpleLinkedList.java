@@ -1,5 +1,6 @@
 package collections;
 
+
 import exception.ListException;
 import exception.QueueException;
 import exception.StackException;
@@ -12,10 +13,14 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 
     private int size;
 
+    
+    
     public SimpleLinkedList() {
         firstNode = null;
         lastNode = null;
         size = 0;
+     
+        
     }
 
     public Node<E> getFirstNode() {
@@ -276,4 +281,79 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
 		// TODO Auto-generated method stub
 		
 	}
+	/* IsBalanced balanced = new IsBalanced();
+
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+	bw.write("Select the action you want to perform \n -1: Generate cases \n -2: Existing cases \n -3: Enter case \n ");
+	bw.flush();
+
+	String ca_se = br.readLine();
+
+	if(ca_se.equals("1")) {
+		
+		File file = new File("cases/testCases.txt");	      
+		
+		file.createNewFile();
+		
+		FileWriter writer = new FileWriter(file); 
+
+
+
+		for (int i = 0; i < 50000; i++) {
+			
+			writer.write(generateRandomInput()+"\n");
+
+		}
+
+		writer.flush();
+		writer.close();
+		
+		FileReader fr = new FileReader("cases/testCases.txt");
+		
+		BufferedReader br2 = new BufferedReader(fr);
+		
+		String cadena = "";
+
+		while((cadena = br2.readLine()) != null) {
+		
+			bw.write(balanced.balanced(cadena)+"\n");
+			
+		}
+
+		bw.flush();
+		
+		br2.close();
+		
+		
+		
+	}else if(ca_se.equals("2")) {
+		
+		FileReader fr = new FileReader("cases/testPre-generatedCases.txt");
+		
+		BufferedReader br3 = new BufferedReader(fr);
+		
+		String cadena = "";
+			
+		while((cadena = br3.readLine()) != null) {
+		
+			bw.write(balanced.balanced(cadena)+"\n");
+		}
+		bw.flush();
+		br3.close();
+		
+	}else if(ca_se.equals("3")) {
+		
+		String c = br.readLine();
+		
+		bw.write(balanced.balanced(c));
+		bw.flush();
+		
+	}else {
+		bw.write(ca_se+" is not a valid option");
+		bw.flush();
+	}
+	}*/
+
+	
 }
