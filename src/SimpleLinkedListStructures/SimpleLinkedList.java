@@ -1,4 +1,4 @@
-package collections;
+package SimpleLinkedListStructures;
 
 
 import exception.ListException;

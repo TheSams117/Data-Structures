@@ -1,4 +1,4 @@
-package collections;
+package SimpleLinkedListStructures;
 
 public class Node<P> {
 	private P element;

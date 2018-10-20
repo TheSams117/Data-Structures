@@ -3,8 +3,8 @@ package ArrayStructures;
 import java.lang.reflect.Array;
 import java.util.Hashtable;
 
-import collections.IList;
-import collections.SimpleLinkedList;
+import SimpleLinkedListStructures.IList;
+import SimpleLinkedListStructures.SimpleLinkedList;
 
 public class ArrayStructure <T>{
 	private IList<T>[] array;
