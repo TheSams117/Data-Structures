@@ -1,6 +1,5 @@
 package SimpleLinkedListStructures;
 
-
 import exception.ListException;
 import exception.QueueException;
 import exception.StackException;
@@ -19,7 +18,6 @@ public class SimpleLinkedList <E> implements IStack<E>, IQueue<E>, IList<E>{
         firstNode = null;
         lastNode = null;
         size = 0;
-     
         
     }
 
